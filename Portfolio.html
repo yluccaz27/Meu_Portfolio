@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="sobre">
+            <h1>Sobre Mim</h1>
+            <div class="sobre-container">
+            <img src="pic/github profile.jpg" alt="Minha foto de perfil" class="foto-perfil">
+            <p>Hello World! bem-vindos ao meu Portifólio, me chamo Lucca e sou Estudante de Programação
+              <br>Caso tenha curiosidade, abaixo você vai encontrar todos os meus projetos recentes XD.
+            </p>
+        </section>
+        <section id="projetos">
+            <h2>Meus Projetos</h2>
+            <div class="projetos-container">
+                <div class="projeto">
+                    <h3>Monitor de Chamados</h3>
+                    <p>Este projeto monitora chamados em um sistema e alerta o usuário com notificações e som.</p>
+                    <pre><code>
+                let valorAnterior = 0;
+                
+                // Reproduz som para novos chamados
+                function tocarSom() {
+                    const audio = new Audio(chrome.runtime.getURL("alarme.mp3"));
+                    audio.play();
+                }
+                
+                // Exibe notificação
+                function mostrarNotificacao() {
+                    if (Notification.permission === "granted") {
+                        new Notification("Novo chamado no sistema!");
+                        tocarSom();
+                    }
+                }
+                
+                // Observa mudanças no elemento #t2
+                function monitorarChamado() {
+                    const elemento = document.querySelector("#t2");
+                    if (elemento) {
+                        const observer = new MutationObserver((mutations) => {
+                            mutations.forEach((mutation) => {
+                                if (mutation.type === "childList") {
+                                    const valorAtual = parseInt(elemento.innerText) || 0;
+                                    if (valorAtual > valorAnterior) {
+                                        mostrarNotificacao();
+                                        valorAnterior = valorAtual;
+                                    }
+                                }
+                            });
+                        });
+                        observer.observe(elemento, { childList: true, subtree: true });
+                    }
+                }
+                monitorarChamado();
+                    </code></pre>
+                </div>
+                
+                <div class="projeto">
+                    <h3>Meu GameDev - Status: Em Produção</h3>
+                    <p>Descrição breve do projeto em produção.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Minhas Redes Sociais</h2>
+            <div class="social-container">
+                <a href="https://instagram.com/yluccaz_" target="_blank" class="social-link">
+                    <img src="pic/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://x.com/yluccaz_" target="_blank" class="social-link">
+                    <img src="pic/x.png" alt="Twitter">
+                </a>
+                <a href="https://github.com/yluccaz27" target="_blank" class="social-link">
+                    <img src="pic/github.png" alt="GitHub">
+                </a>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Lucca SIlva</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
