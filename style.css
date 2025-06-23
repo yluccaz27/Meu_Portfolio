@@ -1,0 +1,352 @@
+/* Reset e fontes base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: #5a7ea3;
+    color: #fff;
+}
+
+/* Menu Hamburguer */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 10px 0px 10px 10px;
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+}
+
+.menu-hamburguer span {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #2c3e50;
+        padding: 10 0 10 10px;
+        border-radius: 8px;
+        position: absolute; 
+        top: 45px;
+        left: 20px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        position: absolute;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+}
+
+/* Sobre Mim */
+#sobre {
+    background-color: #ecf0f1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#sobre h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+.sobre-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.foto-perfil {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border: 4px solid #34495e;
+}
+
+#sobre p {
+    max-width: 800px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Projetos */
+#projetos {
+    background-color: #ffffff;
+    padding: 60px 20px;
+}
+
+#projetos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.4em;
+    color: #2c3e50;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projeto {
+    background-color: #ecf0f1;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto_gptreino{
+    padding-top: 10px;
+    width: 330px;
+    
+}
+.projeto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.12);
+}
+
+.projeto h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.projeto p {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.9em;
+}
+
+/* Seção: Currículo */
+#curriculo {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+#curriculo h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#curriculo p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.curriculo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.curriculo-link {
+    background-color:#34495e;
+    color: white;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.curriculo-link:hover {
+    background-color: linear-gradient(to right, #2c3e50, #34495e);;
+    transform: translateY(-3px);
+}
+
+/* Seção: Curiosidade */
+
+#curiosidades {
+    background-color: #ecf0f1;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  #curiosidades h2 {
+    font-size: 2.4em;
+    margin-bottom: 40px;
+    color: #2c3e50;
+  }
+  
+  .curiosidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .curiosidade-item {
+    position: relative;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .curiosidade-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .curiosidade-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .curiosidade-item h3 {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  /* A caixinha de curiosidade */
+  .curiosidade-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: #34495e;
+    color: white;
+    padding: 20px 10px;
+    transition: bottom 0.4s ease;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .curiosidade-item:hover .curiosidade-info {
+    bottom: 0;
+  }
+  
+  .curiosidade-info p {
+    margin: 0;
+    font-size: 0.95em;
+  }
+  
+
+/* Contato */
+#contato {
+    background: linear-gradient(to right, #547697, #34495e);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.social-link img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Rodapé */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
